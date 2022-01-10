@@ -2,8 +2,8 @@ import {useState} from 'react';
 import './styles.css';
 
 export default function App() {
-    let color = 'white';
-    var meaning;
+    const color = 'white';
+    let meaning;
 
     const emojiDictionary = {
         '🙏': 'folded hands',
@@ -25,8 +25,8 @@ export default function App() {
 
     const [userInput, setUserInput] = useState('');
 
-    function inputChangeHandler(event) {
-        var userInput = event.target.value;
+    const inputChangeHandler = (event) => {
+        const userInput = event.target.value;
         console.log(userInput);
 
         if (!userInput) setUserInput(userInput);
@@ -37,13 +37,13 @@ export default function App() {
             meaning = 'Emoji is not present in the database';
             setUserInput(meaning);
         }
-    }
+    };
 
-    function emojiClickHandler(emoji) {
+    const emojiClickHandler = (emoji) => {
         // console.log(emoji);
         meaning = 'Meaning = ' + emojiDictionary[emoji];
         setUserInput(meaning);
-    }
+    };
 
     return (
         <div className='App'>
